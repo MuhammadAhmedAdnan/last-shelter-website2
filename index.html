@@ -1,3 +1,4 @@
+<!-- Full Updated Website with Logo Fix and Discount Price Display -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +17,6 @@
     }
     nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       background: #111;
@@ -25,14 +25,23 @@
       top: 0;
       z-index: 1000;
     }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
     .logo {
       font-size: 1.8rem;
       color: #ffcc00;
       font-weight: bold;
     }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
       gap: 1rem;
     }
     .nav-links a {
@@ -67,19 +76,9 @@
       0% { background-position: 0 0; }
       100% { background-position: 100px 100px; }
     }
-    .hero > div {
-      z-index: 1;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      color: #ffcc00;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    .hero > div { z-index: 1; }
+    .hero h1 { font-size: 3rem; color: #ffcc00; margin-bottom: 1rem; }
+    .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
     .hero a {
       margin-top: 2rem;
       display: inline-block;
@@ -90,17 +89,8 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .skins-section {
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
-      position: relative;
-      overflow: hidden;
-    }
-    .skins-section h2 {
-      text-align: center;
-      color: #ffcc00;
-      margin-bottom: 2rem;
-    }
+    .section { padding: 4rem 2rem; }
+    .section h2 { text-align: center; color: #ffcc00; margin-bottom: 2rem; }
     .skin-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -111,112 +101,74 @@
       border-radius: 12px;
       padding: 1rem;
       text-align: center;
-      transition: 0.3s;
     }
-    .skin-card img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .skin-card h3 {
-      margin: 0.5rem 0;
-      color: #ffcc00;
-    }
-    .skin-card p {
-      color: #ccc;
-      font-size: 0.9rem;
-      margin: 0.5rem 0;
-    }
-    .skin-card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
+    .skin-card img { width: 100%; border-radius: 10px; }
+    .skin-card h3 { color: #ffcc00; margin: 0.5rem 0; }
+    .skin-card p { margin: 0.3rem 0; }
+    .skin-card del { color: #888; margin-right: 6px; }
+    .skin-card strong { color: #fff; font-weight: bold; }
+    .order-btn {
       background: #ffcc00;
       color: black;
+      padding: 0.5rem 1rem;
       border-radius: 20px;
       text-decoration: none;
+      display: inline-block;
+      margin-top: 0.5rem;
       font-weight: bold;
     }
-    .scroll-review-container {
+    .review-scroll {
       display: flex;
       overflow-x: auto;
       gap: 1rem;
+      scroll-snap-type: x mandatory;
       padding: 1rem;
-      scroll-behavior: smooth;
     }
-    .scroll-review-container::-webkit-scrollbar {
-      height: 8px;
+    .review-scroll::-webkit-scrollbar {
+      height: 10px;
     }
-    .scroll-review-container::-webkit-scrollbar-thumb {
+    .review-scroll::-webkit-scrollbar-thumb {
       background: #ffcc00;
-      border-radius: 4px;
+      border-radius: 20px;
     }
     .review-card {
-      min-width: 300px;
-      background: #1e1e1e;
-      padding: 1.5rem;
-      font-size: 1.1rem;
+      background: #222;
+      padding: 2rem;
       border-radius: 12px;
-      color: white;
-      box-shadow: 0 0 10px rgba(255, 204, 0, 0.2);
+      min-width: 320px;
+      scroll-snap-align: start;
+      font-size: 1.1rem;
     }
-    .contact-section {
-      background: #0d0d0d;
-      padding: 3rem 2rem;
-      text-align: center;
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
     }
     .contact-buttons a {
-      display: inline-block;
-      margin: 1rem;
-      padding: 0.75rem 2rem;
-      border-radius: 30px;
-      font-weight: 600;
-      text-decoration: none;
-      background: #ffcc00;
-      color: black;
-    }
-    .base-section {
-      padding: 3rem 2rem;
-      background: #121212;
-    }
-    .base-section h2 {
-      text-align: center;
-      color: #ffcc00;
-    }
-    .base-section p, .base-section ul, .base-section li {
-      color: #ccc;
-      font-size: 1rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .base-section ul {
-      list-style: disc;
-      padding-left: 2rem;
-    }
-    .base-section a {
-      display: block;
-      width: fit-content;
-      margin: 2rem auto 0;
-      background: #ffcc00;
-      color: black;
       padding: 0.75rem 2rem;
       border-radius: 30px;
       text-decoration: none;
+      color: white;
       font-weight: bold;
     }
-    footer {
-      background: #111;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+    .line { background: #00c300; }
+    .discord { background: #7289da; }
+    .insta { background: #e1306c; }
+    .wechat { background: #7bb32e; }
+    .viber { background: #665cac; }
+    
   </style>
 </head>
 <body>
   <nav>
-    <div class="logo">LastShadowOP</div>
+    <div class="logo-container">
+      <img src="WhatsApp Image 2025-07-02 at 12.52.35 PM.jpeg" alt="Logo" class="logo-img">
+      <div class="logo">LastShadowOP</div>
+    </div>
     <div class="nav-links">
-      <a href="#skins">Skins</a>
+      <a href="#skins">Weekly Special</a>
       <a href="#base">Base Management</a>
       <a href="#reviews">Reviews</a>
       <a href="#contact">Contact</a>
@@ -231,115 +183,88 @@
     </div>
   </section>
 
-  <section class="skins-section" id="skins">
-    <h2>Available Skins</h2>
+  <section class="section" id="skins">
+    <h2>🎯 Weekly Special</h2>
     <div class="skin-grid">
       <div class="skin-card">
-        <img src="https://i.imgur.com/dy0FKAS.jpg" alt="Valkyrie Skin">
-        <h3>Hero Skin: Valkyrie</h3>
-        <p>Price: $30</p>
-        <a href="#contact">Order Now</a>
+        <img src="WhatsApp Image 2025-07-02 at 1.09.50 PM.jpeg" alt="Valkyrie Skin">
+        <h3>Valkyrie</h3>
+        <p><del>$35</del><strong>$25</strong></p>
+        <a href="#contact" class="order-btn">Order Now</a>
       </div>
       <div class="skin-card">
-        <img src="https://i.imgur.com/F3ZvjKn.jpg" alt="Frozen Fortress">
-        <h3>Base Skin: Frozen Fortress</h3>
-        <p>Price: $40</p>
-        <a href="#contact">Order Now</a>
+        <img src="WhatsApp Image 2025-07-02 at 1.09.51 PM (2).jpeg" alt="Frozen Fortress">
+        <h3>Frozen Fortress</h3>
+        <p><del>$30</del><strong>$20</strong></p>
+        <a href="#contact" class="order-btn">Order Now</a>
       </div>
       <div class="skin-card">
-        <img src="https://i.imgur.com/F3ZvjKn.jpg" alt="Lava Ridge">
-        <h3>Base Skin: Lava Ridge</h3>
-        <p>Price: $35</p>
-        <a href="#contact">Order Now</a>
+        <img src="WhatsApp Image 2025-07-02 at 1.09.51 PM.jpeg" alt="Inferno">
+        <h3>Inferno</h3>
+        <p><del>$40</del><strong>$28</strong></p>
+        <a href="#contact" class="order-btn">Order Now</a>
       </div>
       <div class="skin-card">
-        <img src="https://i.imgur.com/dy0FKAS.jpg" alt="Inferno">
-        <h3>Hero Skin: Inferno</h3>
-        <p>Price: $28</p>
-        <a href="#contact">Order Now</a>
+        <img src="WhatsApp Image 2025-07-02 at 1.11.05 PM.jpeg" alt="Lava Ridge">
+        <h3>Lava Ridge</h3>
+        <p><del>$27</del><strong>$22</strong></p>
+        <a href="#contact" class="order-btn">Order Now</a>
       </div>
     </div>
   </section>
 
-  <section class="base-section" id="base">
-    <h2>💼 🛠 Base & Farm Management Services</h2>
-    <p>“Too busy to manage your base or farms? Let us handle it while you focus on battles!”</p>
+  <section class="section" id="base">
+    <h2>🛠 Base & Farm Management</h2>
+    <div class="skin-card" style="max-width: 800px; margin: auto;">
+      <h3>Base Management</h3>
+      <p>Full handling of your main base — stay upgraded, defended, and event-ready!</p>
+      <p><strong>Price:</strong> $100 – $300/month (based on level, region, and goals)</p>
+      <p><strong>Optional Add-ons:</strong> Weekly screenshots, custom time slots, event-specific pushes</p>
+      <a href="#contact" class="order-btn">Request Base Management</a>
+    </div>
     <br />
-    <h3>🧱 1. Base Management</h3>
-    <p>Full handling of your main base — stay upgraded, defended, and event-ready!</p>
-    <p><strong>💲Price:</strong> $100 – $300/month (based on level, region, and goals)</p>
-    <p><strong>✅ Optional Add-ons:</strong></p>
-    <ul>
-      <li>Weekly reporting screenshots</li>
-      <li>Custom time slots</li>
-      <li>Event-specific push (e.g., Doomsday, Clash of Zones)</li>
-    </ul>
-    <p><strong>🔐 Safe & Confidential:</strong> Your login info stays secure. We never share or save it after service ends.</p>
-    <a href="#contact">Request Base Management</a>
-    <br />
-    <h3>🌾 2. Farm Management</h3>
-    <p>Let your farms stay active 24/7 — resources never sleep!</p>
-    <p><strong>💲Price:</strong> $4/month per farm</p>
-    <p><strong>🔹What’s Included:</strong></p>
-    <ul>
-      <li>Gathering, exploration, national mission, shielding</li>
-      <li>COZ tasks (gathering & hero days)</li>
-      <li>Missile systems, electricity, helicopter</li>
-      <li>Upgrade of base buildings</li>
-    </ul>
-    <p><strong>🔐 100% Secure:</strong> Fast & discreet service, only trusted handlers.</p>
-    <a href="#contact">Request Farm Management</a>
-  </section>
-
-  <section class="skins-section" id="reviews">
-    <h2>User Reviews</h2>
-    <div class="scroll-review-container">
-      <div class="review-card">
-        <p>🔥 Amazing skin quality! Will order again.</p>
-        <strong>— CommanderX</strong>
-      </div>
-      <div class="review-card">
-        <p>Super fast delivery and trusted service. 💯</p>
-        <strong>— Zainab_G</strong>
-      </div>
-      <div class="review-card">
-        <p>Affordable prices and top-notch support!</p>
-        <strong>— AyyanPro</strong>
-      </div>
-      <div class="review-card">
-        <p>All skins worked perfectly. Excellent job 👏</p>
-        <strong>— RocketBase</strong>
-      </div>
-      <div class="review-card">
-        <p>10/10 service. Very responsive team!</p>
-        <strong>— ZeeshanK</strong>
-      </div>
-      <div class="review-card">
-        <p>Loved the skins and packaging. Will recommend!</p>
-        <strong>— SKGaming</strong>
-      </div>
+    <div class="skin-card" style="max-width: 800px; margin: auto;">
+      <h3>Farm Management</h3>
+      <p>Let your farms stay active 24/7 — resources never sleep!</p>
+      <p><strong>Price:</strong> $4/month per farm</p>
+      <ul style="text-align: left;">
+        <li>Gathering, exploration, missions</li>
+        <li>Shielding, CoZ tasks, upgrades</li>
+        <li>Missile system, electricity, helicopter</li>
+      </ul>
+      <a href="#contact" class="order-btn">Request Farm Management</a>
     </div>
   </section>
 
-  <section class="contact-section" id="contact">
-    <h2>Contact & Order</h2>
-    <p>Choose your preferred platform to reach us:</p>
+  <section class="section" id="reviews">
+    <h2>🗣️ What Players Say</h2>
+    <div class="review-scroll">
+      <div class="review-card">🔥 “Fastest delivery I’ve had. Got 3 skins in under 30 minutes!”<br />– @LegendZone</div>
+      <div class="review-card">💯 “Trusted them with my base login, 2 months in and no regrets.”<br />– @ShadowKiller</div>
+      <div class="review-card">🚀 “Their event push helped me win Doomsday rewards!”<br />– @EliteForce</div>
+      <div class="review-card">🎯 “Great value for farm management. Saved me hours daily.”<br />– @WarMachine</div>
+      <div class="review-card">💎 “Safe, secure, and professional. My go-to for events.”<br />– @IronTusk</div>
+      <div class="review-card">🔥 “Highly recommended for CoZ. Elite service!”<br />– @Hunter99</div>
+      <div class="review-card">🎁 “Helped me max 5 farms in 1 week!”<br />– @FarmingPro</div>
+      <div class="review-card">🏆 “Without their help I couldn’t have ranked in Doomsday.”<br />– @Blitz</div>
+      <div class="review-card">🚀 “Perfect experience with their custom time slots!”<br />– @NeoX</div>
+      <div class="review-card">🛡️ “Most trusted base handlers I’ve used.”<br />– @ShieldMaster</div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>📩 Contact & Order Us</h2>
+   <p style="font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem; text-align: center;">
+  You can reach us through any of the platforms below:
+</p>
+
     <div class="contact-buttons">
-      <a href="https://line.me/ti/p/UMdCNAiLEp" target="_blank">📱 LINE</a>
-      <a href="https://discordapp.com/users/lastshadowop" target="_blank">🎮 Discord</a>
-      <a href="https://instagram.com/lastshadow_op" target="_blank">📷 Instagram</a>
-      <a href="https://weixin.qq.com/" target="_blank">💬 WeChat</a>
-      <a href="https://vb.me/letsChatOnViber" target="_blank">📞 Viber</a>
+      <a href="https://line.me/ti/p/UMdCNAiLEp" target="_blank" class="line">LINE</a>
+      <a href="https://discordapp.com/users/lastshadowop" target="_blank" class="discord">Discord</a>
+      <a href="https://instagram.com/lastshadow_op" target="_blank" class="insta">Instagram</a>
+      <a href="#" class="wechat">WeChat: lastshadowop</a>
+      <a href="https://vb.me/letsChatOnViber" target="_blank" class="viber">Viber</a>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 LastShadowOP. All Rights Reserved.</p>
-  </footer>
-
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
